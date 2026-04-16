@@ -4,22 +4,50 @@ import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import Curriculo from '../../assets/Curriculo_Kaya_Haufe.pdf';
 import profileImage from '../../assets/profile.jpeg';
+import groupImage from '../../assets/viventi-logo.png';
 
 export default function Sobre() {
   const footer = (
-    <div className="flex flex-column align-items-center">
-      <Avatar image={profileImage} size="xlarge" shape="circle" />
-      <span className="mt-3">Desenvolvido por Kayã Haufe.</span>
+    <div className="flex inline-block align-items-center">
+      <section margin="auto">
 
-      <div className="sobre-footer-actions">
-        <a href="https://www.linkedin.com/in/kayahaufe" target="_blank" rel="noreferrer">
-          <Button label="LinkedIn" icon="pi pi-linkedin" className="linkedin-button" />
-        </a>
+        <div className='flex inline-block align-items-center justify-content-center'>
 
-        <a href={Curriculo} download="Curriculo_Kaya_Haufe.pdf">
-          <Button label="Curriculo" icon="pi pi-download" className="p-button-success" />
-        </a>
-      </div>
+          <Avatar image={profileImage} size="xlarge" shape="circle" />
+
+        </div>
+
+        <div className="sobre-footer-actions">
+          <a href="https://www.linkedin.com/in/kayahaufe" target="_blank" rel="noreferrer">
+            <Button label="LinkedIn" icon="pi pi-linkedin" className="linkedin-button" />
+          </a>
+
+          <a href={Curriculo} download="Curriculo_Kaya_Haufe.pdf">
+            <Button label="Curriculo" icon="pi pi-download" className="p-button-success" />
+          </a>
+        </div>
+      </section>   
+
+      <section>
+
+        <div className='flex inline-block align-items-center justify-content-center'>
+
+          <Avatar image={groupImage} size="xlarge" shape="circle" />
+          
+        </div>
+
+        <div className="sobre-footer-actions">
+          <a href="https://linktr.ee/viventi" target="_blank" rel="noreferrer">
+            <Button label="Links dos Membros" icon="pi pi-linkedin" className="linkedin-button" />
+          </a>
+
+          <a href={Curriculo} download="Curriculo_Kaya_Haufe.pdf">
+            <Button label="Ficha Técnica" icon="pi pi-download" className="p-button-success" />
+          </a>
+        </div>
+
+      </section>
+
     </div>
   );
 

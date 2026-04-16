@@ -86,8 +86,8 @@ a {
 
 .custom-menubar,
 .custom-menubar .p-menubar-root-list {
-    background-color: #151515;
-    border-color: #151515;
+    background-color: #0f1f10;
+    border-color: #0f1f10;
     border-radius: 0;
 }
 
@@ -97,25 +97,30 @@ a {
 }
 
 .custom-menubar .p-menuitem-link:hover,
-.custom-menubar .p-menuitem-link:focus {
-    background-color: #EB6625;
-    border-color: #EB6625;
+.custom-menubar .p-menuitem-link:focus, .p-menubar .p-menubar-root-list > .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover {
+    background-color: #417546;
+    border-color: #417546;
     color: white;
+    border-radius: 10%;
+}
+
+.p-menubar .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
+    background-color: #1a3a1c;
 }
 
 .p-button-success,
 .btn-entrar,
 .btn-orange {
-    background-color: #EB6625;
-    border-color: #EB6625;
+    background-color: #417546;
+    border-color: #7ab07f;
     color: white;
 }
 
 .p-button-success:hover,
 .btn-entrar:hover,
 .btn-orange:hover {
-    background-color: #d95c20;
-    border-color: #d95c20;
+    background-color: #7ab07f;
+    border-color: #417546;
 }
 
 .btn-red-not-bg {

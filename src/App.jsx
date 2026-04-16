@@ -1,11 +1,11 @@
 import React, { Suspense, lazy } from 'react';
 import { Link, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import 'primereact/resources/themes/saga-orange/theme.css';
+import 'primereact/resources/themes/saga-green/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import { Menubar } from 'primereact/menubar';
-import LogoTeddy from './assets/logo-teddy.png';
+import LogoTeddy from './assets/ginkle-logotipo.png';
 import './App.css';
 import ProtectedRoute from './components/common/protected-route';
 import { ROUTES } from './constants/app-config';
