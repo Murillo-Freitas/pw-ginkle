@@ -10,7 +10,7 @@ Aplicação React para cadastro e gestão de Instituições de Longa Permanênci
 - Axios
 - Vite 7
 - ESLint 9
-- Docker com Nginx para servir o build de producao
+- Docker com Nginx para servir o build de produção
 
 ## Scripts
 
@@ -29,7 +29,7 @@ O servidor de desenvolvimento sobe em:
 http://localhost:5173
 ```
 
-## Build de producao
+## Build de produção
 
 ```sh
 npm run build
@@ -57,7 +57,7 @@ Ou com Compose:
 docker compose up --build
 ```
 
-Aplicacao disponivel em:
+Aplicação disponível em:
 
 ```txt
 http://localhost:4173
@@ -65,11 +65,11 @@ http://localhost:4173
 
 ## Deploy
 
-O projeto esta configurado como SPA. Em ambientes como Vercel, rotas internas sao redirecionadas para `index.html`.
+O projeto está configurado como SPA. Em ambientes como Vercel, rotas internas são redirecionadas para `index.html`.
 
-## Observacoes
+## Observações
 
-- O login atual e uma sessao local simples usando cookie ou localStorage.
+- O login atual é uma sessão local simples usando cookie ou localStorage.
 - As listagens consomem APIs mockadas externas.
-- O codigo foi reorganizado para centralizar rotas, sessao, normalizacao de dados e servicos HTTP.
-- Se a API externa falhar, o front usa dados seedados e um CRUD local persistido em `localStorage`, mantendo o site funcional para estudo e demonstracao.
+- O código foi reorganizado para centralizar rotas, sessão, normalização de dados e serviços HTTP.
+- Se a API externa falhar, o front usa dados seedados e um CRUD local persistido em `localStorage`, mantendo o site funcional para estudo e demonstração.
