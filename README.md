@@ -1,6 +1,6 @@
-# Teddy
+# Ginkle
 
-Aplicacao React para cadastro e gestao de parceiros e empresas externas, usando PrimeReact e Vite.
+Aplicação React para cadastro e gestão de Instituições de Longa Permanência para Idosos (ILPI), usando PrimeReact e Vite.
 
 ## Stack
 
