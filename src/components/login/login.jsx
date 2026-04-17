@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { ROUTES, STORAGE_KEYS } from '../../constants/app-config';
 import { persistUsername } from '../../utils/session';
+import ginkleLogo from '../../assets/ginkle-logo.png';
 import './login.css';
 
 export default function Login() {
@@ -49,44 +50,55 @@ export default function Login() {
 
   return (
     <div className="login-screen">
-      <Card title="Login" className="login-card">
-        <form className="p-fluid login-form" onSubmit={handleSubmit}>
-          <div className="field">
-            <label htmlFor="username">Usuario</label>
-            <InputText
-              id="username"
-              value={username}
-              onChange={(event) => setUsername(event.target.value)}
-              autoComplete="username"
-              className={errorMessage ? 'p-invalid' : ''}
-            />
-          </div>
+      <div className="login-wrapper">
 
-          <div className="field">
-            <label htmlFor="password">Senha</label>
-            <InputText
-              id="password"
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              autoComplete="current-password"
-            />
-          </div>
+        <div className="login-brand">
+          <img src={ginkleLogo} alt="Ginkle" />
+          <span className="login-brand-sub">Sistema de Gestão para ILPI</span>
+        </div>
 
-          <div className="field-checkbox">
-            <Checkbox
-              inputId="rememberMe"
-              checked={rememberMe}
-              onChange={(event) => setRememberMe(Boolean(event.checked))}
-            />
-            <label htmlFor="rememberMe">Manter Conectado</label>
-          </div>
+        <Card title="Acesse a sua conta" className="login-card">
+          <form className="p-fluid login-form" onSubmit={handleSubmit}>
+            <div className="field">
+              <label htmlFor="username">Usuario</label>
+              <InputText
+                id="username"
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+                autoComplete="username"
+                className={errorMessage ? 'p-invalid' : ''}
+              />
+            </div>
 
-          {errorMessage && <small className="login-error">{errorMessage}</small>}
+            <div className="field">
+              <label htmlFor="password">Senha</label>
+              <InputText
+                id="password"
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                autoComplete="current-password"
+              />
+            </div>
 
-          <Button type="submit" label="Entrar" className="btn-entrar" />
-        </form>
-      </Card>
+            <div className="field-checkbox">
+              <Checkbox
+                inputId="rememberMe"
+                checked={rememberMe}
+                onChange={(event) => setRememberMe(Boolean(event.checked))}
+              />
+              <label htmlFor="rememberMe">Manter Conectado</label>
+            </div>
+
+            {errorMessage && <small className="login-error">{errorMessage}</small>}
+
+            <Button type="submit" label="Entrar" className="btn-entrar" icon="pi pi-sign-in" />
+          </form>
+        </Card>
+
+        <p className="login-footer-text">Ginkle © {new Date().getFullYear()} · Sistema de Gestão para ILPI</p>
+
+      </div>
     </div>
   );
 }

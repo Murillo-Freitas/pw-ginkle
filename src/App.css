@@ -1,6 +1,31 @@
+:root {
+  --ginkle-900: #0f1f10;
+  --ginkle-800: #1a3a1c;
+  --ginkle-750: #1e2b1f;
+  --ginkle-600: #346337;
+  --ginkle-500: #417546;
+  --ginkle-400: #7ab07f;
+  --ginkle-300: #8fab91;
+  --ginkle-200: #a3d7a9;
+  --ginkle-150: #b4d4b8;
+  --ginkle-100: #e4f0e5;
+  --ginkle-50:  #f2f8f2;
+  --white:      #ffffff;
+
+  --font-display: 'Lora', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 4px 24px rgba(15, 31, 16, 0.10);
+  --shadow-hover: 0 8px 32px rgba(15, 31, 16, 0.18);
+}
+
 body {
     margin: 0;
-    background: #f5f7fb;
+    background: var(--ginkle-100);
     color: #1f2937;
     font-family: var(--font-family, Arial, sans-serif);
 }
@@ -84,28 +109,38 @@ a {
     word-break: break-word;
 }
 
-.custom-menubar,
-.custom-menubar .p-menubar-root-list {
-    background-color: #0f1f10;
-    border-color: #0f1f10;
+.custom-menubar {
+    background-color: var(--ginkle-900);
+    border: none;
     border-radius: 0;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 2px 16px rgba(15,31,16,0.25);
 }
 
 .custom-menubar .p-menuitem-text,
 .welcome {
-    color: white;
+    color: var(--ginkle-150);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 .custom-menubar .p-menuitem-link:hover,
-.custom-menubar .p-menuitem-link:focus, .p-menubar .p-menubar-root-list > .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover {
-    background-color: #417546;
-    border-color: #417546;
-    color: white;
-    border-radius: 10%;
+.custom-menubar .p-menuitem-link:focus, 
+.p-menubar .p-menubar-root-list > .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover {
+    background: var(--ginkle-600);
+    color: var(--white);
+    border-radius: var(--radius-sm)
 }
 
 .p-menubar .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
-    background-color: #1a3a1c;
+    background: var(--ginkle-800);
+}
+
+.welcome {
+  font-family: var(--font-display);
+  color: var(--ginkle-200);
 }
 
 .p-button-success,
@@ -173,7 +208,7 @@ a {
 }
 
 .content-card {
-    background: white;
+    background: #f2f8f2;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     padding: 1rem;
@@ -182,6 +217,35 @@ a {
 .dialog-grid {
     display: grid;
     gap: 1rem;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: var(--ginkle-100);
+  color: var(--ginkle-800);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--ginkle-150);
+}
+
+.p-datatable.p-datatable-striped .p-datatable-tbody > tr:nth-child(even) {
+  background: var(--ginkle-50);
+}
+
+.p-datatable.p-datatable-striped .p-datatable-tbody > tr:nth-child(even):hover {
+  background: var(--ginkle-100) ;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background: var(--ginkle-100);
+}
+
+.p-paginator .p-paginator-page.p-highlight {
+  background: var(--ginkle-500);
+  color: white;
+  border-radius: var(--radius-sm);
 }
 
 .table-cell-list {
@@ -194,11 +258,51 @@ a {
 }
 
 .sobre {
-    padding: 1rem 0 2rem;
+    padding: 1.5rem 0 3rem;
 }
 
 .sobre .p-card {
-    width: min(100%, 960px);
+    width: min(100%, 980px);
+}
+
+.sobre .p-card .p-card-content section {
+  margin-bottom: 1.5rem;
+}
+
+.sobre .p-card .p-card-content h2 {
+  font-size: 1.05rem;
+  color: var(--ginkle-600);
+  border-bottom: 2px solid var(--ginkle-100);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.sobre-footer-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.sobre-footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 180px;
+  padding: 1.25rem 1rem;
+  background: var(--ginkle-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--ginkle-100);
+}
+
+.sobre-footer-section h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  color: var(--ginkle-600);
+  font-size: 0.95rem;
 }
 
 .sobre-footer-actions {

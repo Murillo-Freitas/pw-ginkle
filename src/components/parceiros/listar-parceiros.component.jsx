@@ -44,7 +44,7 @@ export default function ListarParceiros() {
       toast.current?.show({
         severity: 'error',
         summary: 'Erro',
-        detail: 'Nao foi possivel carregar os parceiros.',
+        detail: 'Não foi possível carregar as instituições.',
         life: 3000,
       });
     } finally {
@@ -82,8 +82,8 @@ export default function ListarParceiros() {
     if (!payload.name) {
       toast.current?.show({
         severity: 'warn',
-        summary: 'Campos obrigatorios',
-        detail: 'Informe o nome do parceiro.',
+        summary: 'Campos obrigatórios',
+        detail: 'Informe o nome da instituição.',
         life: 3000,
       });
       return;
@@ -111,7 +111,7 @@ export default function ListarParceiros() {
       toast.current?.show({
         severity: 'success',
         summary: 'Sucesso',
-        detail: partner.id ? 'Parceiro atualizado.' : 'Parceiro cadastrado.',
+        detail: partner.id ? 'Instituição atualizada.' : 'Instituição cadastrada.',
         life: 3000,
       });
 
@@ -121,7 +121,7 @@ export default function ListarParceiros() {
       toast.current?.show({
         severity: 'error',
         summary: 'Erro',
-        detail: 'Nao foi possivel salvar o parceiro.',
+        detail: 'Não foi possível salvar a instituição.',
         life: 3000,
       });
     } finally {
@@ -163,14 +163,14 @@ export default function ListarParceiros() {
       toast.current?.show({
         severity: 'success',
         summary: 'Sucesso',
-        detail: 'Parceiro deletado.',
+        detail: 'Instituição deletada.',
         life: 3000,
       });
     } catch {
       toast.current?.show({
         severity: 'error',
         summary: 'Erro',
-        detail: 'Nao foi possivel deletar o parceiro.',
+        detail: 'Não foi possível deletar a instituição.',
         life: 3000,
       });
     } finally {
@@ -224,8 +224,8 @@ export default function ListarParceiros() {
   const header = (
     <div className="page-toolbar">
       <div>
-        <h2 className="page-title">Parceiros</h2>
-        <span className="muted-value">Cadastro, consulta e manutencao dos parceiros.</span>
+        <h2 className="page-title">Instituições de Longa Permanência para Idosos (ILPIs)</h2>
+        <span className="muted-value">Cadastro, consulta e manutenção das insituições.</span>
       </div>
 
       <div className="toolbar-actions">
@@ -237,7 +237,7 @@ export default function ListarParceiros() {
             placeholder="Buscar..."
           />
         </span>
-        <Button label="Adicionar Parceiro" icon="pi pi-plus" severity="success" onClick={openNew} />
+        <Button label="Adicionar Instituição" icon="pi pi-plus" severity="success" onClick={openNew} />
       </div>
     </div>
   );
@@ -294,16 +294,16 @@ export default function ListarParceiros() {
           onPage={(event) => updatePagination(event.page, event.rows)}
           rowsPerPageOptions={ROWS_PER_PAGE_OPTIONS}
           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="{first} ao {last} de {totalRecords} parceiros"
-          emptyMessage="Nenhum parceiro encontrado."
+          currentPageReportTemplate="{first} ao {last} de {totalRecords} instituições"
+          emptyMessage="Nenhuma instituição encontrada."
           responsiveLayout="scroll"
           stripedRows
         >
           <Column field="id" header="Codigo" sortable style={{ minWidth: '8rem' }} />
           <Column field="name" header="Nome" sortable style={{ minWidth: '16rem' }} />
           <Column field="description" header="Descricao" sortable style={{ minWidth: '14rem' }} />
-          <Column header="Clientes" body={(rowData) => formatList(rowData.clients)} style={{ minWidth: '12rem' }} />
-          <Column header="Projetos" body={(rowData) => formatList(rowData.projects)} style={{ minWidth: '12rem' }} />
+          <Column header="Nº de Médicos" body={(rowData) => formatList(rowData.clients)} style={{ minWidth: '12rem' }} />
+          <Column header="Nº de Residentes" body={(rowData) => formatList(rowData.projects)} style={{ minWidth: '12rem' }} />
           <Column body={actionBodyTemplate} style={{ minWidth: '8rem' }} />
         </DataTable>
       </div>
@@ -312,7 +312,7 @@ export default function ListarParceiros() {
         visible={partnerDialog}
         style={{ width: '32rem' }}
         breakpoints={{ '960px': '75vw', '641px': '90vw' }}
-        header={partner.id ? 'Editar Parceiro' : 'Novo Parceiro'}
+        header={partner.id ? 'Editar Instituição' : 'Nova Instituição'}
         modal
         className="p-fluid"
         footer={partnerDialogFooter}
@@ -328,7 +328,7 @@ export default function ListarParceiros() {
               autoFocus
               className={partnerNameInvalid ? 'p-invalid' : ''}
             />
-            {partnerNameInvalid && <small className="p-error">Informe o nome do parceiro.</small>}
+            {partnerNameInvalid && <small className="p-error">Informe o nome da instituição.</small>}
           </div>
 
           <div className="field">
@@ -342,7 +342,7 @@ export default function ListarParceiros() {
           </div>
 
           <div className="field">
-            <label htmlFor="client" className="font-bold">Cliente</label>
+            <label htmlFor="client" className="font-bold">Nº de Médicos</label>
             <InputText
               id="client"
               value={partner.client}
@@ -351,29 +351,11 @@ export default function ListarParceiros() {
           </div>
 
           <div className="field">
-            <label htmlFor="client2" className="font-bold">Cliente 2</label>
-            <InputText
-              id="client2"
-              value={partner.client2}
-              onChange={(event) => handleInputChange('client2', event.target.value)}
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="project" className="font-bold">Projeto</label>
+            <label htmlFor="project" className="font-bold">Nº de Residentes</label>
             <InputText
               id="project"
               value={partner.project}
               onChange={(event) => handleInputChange('project', event.target.value)}
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="project2" className="font-bold">Projeto 2</label>
-            <InputText
-              id="project2"
-              value={partner.project2}
-              onChange={(event) => handleInputChange('project2', event.target.value)}
             />
           </div>
         </div>
@@ -391,7 +373,7 @@ export default function ListarParceiros() {
         <div className="confirmation-content">
           <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
           <span>
-            Tem certeza que deseja excluir o parceiro <b>{partner.name || '-'}</b>?
+            Tem certeza que deseja excluir a instituição <b>{partner.name || '-'}</b>?
           </span>
         </div>
       </Dialog>

@@ -4,19 +4,26 @@ body.login-page {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 .login-screen {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
+    position: relative;
 }
 
 .login-card {
-    width: min(100%, 22rem);
+    width: 100%;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(180,212,184,0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
 }
 
 .login-form {
@@ -26,4 +33,66 @@ body.login-page {
 
 .login-error {
     color: #b42318;
+    font-size: 0.85rem;
+}
+
+.login-footer-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--ginkle-900);
+    text-align: center;
+}
+
+.login-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: min(100%, 22rem);
+}
+
+.login-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-brand img {
+    height: 72px;
+}
+
+.login-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.01em;
+}
+
+.login-brand-sub {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--ginkle-900);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.login-card .p-card-body { padding: 1.75rem; }
+.login-card .p-card-title {
+    font-family: var(--font-display);
+    color: var(--ginkle-800);
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.login-form label {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ginkle-600);
+    margin-bottom: 0.3rem;
+    display: block;
 }

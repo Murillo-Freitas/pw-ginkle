@@ -5,7 +5,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import { Menubar } from 'primereact/menubar';
-import LogoTeddy from './assets/ginkle-logotipo.png';
+import LogoGinkle from './assets/ginkle-logotipo.png';
 import './App.css';
 import ProtectedRoute from './components/common/protected-route';
 import { ROUTES } from './constants/app-config';
@@ -44,7 +44,7 @@ function App() {
 
   const menuItems = [
     {
-      label: 'Parceiros',
+      label: 'Instituições',
       command: () => navigate(ROUTES.partners),
     },
     {
@@ -63,7 +63,7 @@ function App() {
 
   const start = (
     <Link to={ROUTES.partners}>
-      <img alt="logo" src={LogoTeddy} height="40" className="mr-2" />
+      <img alt="logo" src={LogoGinkle} height="40" className="mr-2" />
     </Link>
   );
 
